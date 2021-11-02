@@ -6,22 +6,26 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: cornflowerblue;
+    background-color: lightblue;
 }
 
 .container {
-    width: 450px;
+    width: 1000px;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .logo {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .add_task {
     margin-top: 20px;
     text-align: center;
+    width: 100%;
 }
 
 .add_task input {
@@ -49,6 +53,23 @@ body {
     padding: 35px 25px;
     border-radius: 10px;
     margin-top: 20px;
+    width: 47%;
+    margin-left: 3%;
+}
+
+.tasks.complete,
+.tasks.delete {
+    width: 22%;
+}
+
+.deleted_task {
+    cursor: pointer;
+    color: crimson;
+    text-decoration: underline;
+}
+
+.deleted_task:hover {
+    color: darkblue;
 }
 
 .item {
@@ -58,7 +79,8 @@ body {
     padding: 10px 0;
 }
 
-.delete_task i {
+.delete_task i,
+.return_task i {
     cursor: pointer;
     margin-left: 5px;
 }

@@ -8,10 +8,13 @@ const app = new Vue({
         ],
         newTask: "",
         error: false,
-        saved: []
+        saves: [],
+        deletes: [],
+        empty: ""
     },
     methods: {
         removeTask(i) {
+            this.deletes.push(this.tasks[i])
             this.tasks.splice(i, 1)
         },
         addTask() {
@@ -24,9 +27,22 @@ const app = new Vue({
             this.newTask = ""
         },
         completeTask(i) {
-            this.saved.push(this.tasks[i])
+            this.saves.push(this.tasks[i])
             this.tasks.splice(i, 1)
-            console.log(this.saved);
+        },
+        reundoTask(i) {
+            this.tasks.push(this.saves[i])
+            this.saves.splice(i, 1)
+        },
+        deleteTask() {
+            const del = prompt("Sei sicuro di voler eliminare tutto? [Y/N]")
+            if (del === "Y") {
+                this.deletes = []
+            }
+        },
+        returnTask(i) {
+            this.tasks.push(this.deletes[i])
+            this.deletes.splice(i, 1)
         }
     }
 });

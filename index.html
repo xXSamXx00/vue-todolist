@@ -23,7 +23,7 @@
                 <div class="error" v-show="error">Devi scrivere qualcosa di almeno 5 caratteri!</div>
             </div>
             <div class="tasks" v-if="tasks.length > 0">
-                <h2>Todo List</h2>
+                <h4>Lista di Todo</h4>
                 <div class="item" v-for="(task, index) in tasks">
                     {{ task }}
                     <div class="delete_task">
@@ -33,9 +33,31 @@
                 </div>
             </div>
             <div class="nothing_to_do" v-else>
-                <h2>Todo List</h2>
+                <h4>Lista di Todo</h4>
                 <p style="text-align: center; margin-top: 20px;">Non hai pi&ugrave; niente da fare!</p>
             </div>
+
+            <div class="tasks complete" v-if="saves.length > 0">
+                <h4>Completate</h4>
+                <div class="item" v-for="(save, index) in saves">
+                    {{ save }}
+                    <div class="return_task">
+                        <i class="fas fa-undo-alt" @click="reundoTask(index)"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nothing_saved" v-else></div>
+
+            <div class="tasks delete" v-if="deletes.length > 0">
+                <h4>Cestino <br>(<span class="deleted_task" @click="deleteTask">Svuota Cestino</span>)</h4>
+                <div class="item" v-for="(deleted, index) in deletes">
+                    {{ deleted }}
+                    <div class="return_task">
+                        <i class="fas fa-trash-restore" @click="returnTask(index)"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nothing_saved" v-else></div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
