@@ -25,7 +25,7 @@
             <div class="tasks" v-if="tasks.length > 0">
                 <h4>Lista di Todo</h4>
                 <div class="item" v-for="(task, index) in tasks">
-                    {{ task }}
+                    <input type="text" v-model="task" class="task_imput">
                     <div class="delete_task">
                         <i class="fas fa-check-circle" @click="completeTask(index)"></i>
                         <i class="fas fa-trash" @click="removeTask(index)"></i>

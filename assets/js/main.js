@@ -9,8 +9,7 @@ const app = new Vue({
         newTask: "",
         error: false,
         saves: [],
-        deletes: [],
-        empty: ""
+        deletes: []
     },
     methods: {
         removeTask(i) {
@@ -36,7 +35,7 @@ const app = new Vue({
         },
         deleteTask() {
             const del = prompt("Sei sicuro di voler eliminare tutto? [Y/N]")
-            if (del === "Y") {
+            if (del === "Y" || del === "y") {
                 this.deletes = []
             }
         },

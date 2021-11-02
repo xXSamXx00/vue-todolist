@@ -72,6 +72,11 @@ body {
     color: darkblue;
 }
 
+.task_imput {
+    background-color: #EDEDED;
+    border: 1px solid transparent;
+}
+
 .item {
     display: flex;
     justify-content: space-between;
