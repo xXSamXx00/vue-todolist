@@ -26,7 +26,8 @@
                 <div class="item" v-for="(task, index) in tasks">
                     {{ task }}
                     <div class="delete_task">
-                        <i class="fas fa-times" @click="removeTask(index)"></i>
+                        <i class="fas fa-check-circle" @click="completeTask(index)"></i>
+                        <i class="fas fa-trash" @click="removeTask(index)"></i>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,8 @@ const app = new Vue({
             "Imparare VueJS"
         ],
         newTask: "",
-        error: false
+        error: false,
+        saved: []
     },
     methods: {
         removeTask(i) {
@@ -21,6 +22,11 @@ const app = new Vue({
                 this.error = true
             }
             this.newTask = ""
+        },
+        completeTask(i) {
+            this.saved.push(this.tasks[i])
+            this.tasks.splice(i, 1)
+            console.log(this.saved);
         }
     }
 });
