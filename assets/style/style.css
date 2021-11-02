@@ -43,7 +43,8 @@ body {
     color: red;
 }
 
-.tasks {
+.tasks,
+.nothing_to_do {
     background-color: #EDEDED;
     padding: 35px 25px;
     border-radius: 10px;

@@ -23,6 +23,7 @@
                 <div class="error" v-show="error">Devi scrivere qualcosa di almeno 5 caratteri!</div>
             </div>
             <div class="tasks" v-if="tasks.length > 0">
+                <h2>Todo List</h2>
                 <div class="item" v-for="(task, index) in tasks">
                     {{ task }}
                     <div class="delete_task">
@@ -31,7 +32,8 @@
                     </div>
                 </div>
             </div>
-            <div v-else>
+            <div class="nothing_to_do" v-else>
+                <h2>Todo List</h2>
                 <p style="text-align: center; margin-top: 20px;">Non hai pi&ugrave; niente da fare!</p>
             </div>
         </div>
