@@ -42,6 +42,9 @@ const app = new Vue({
         returnTask(i) {
             this.tasks.push(this.deletes[i])
             this.deletes.splice(i, 1)
+        },
+        updateTask() {
+            alert(`Task aggiornata con successo! La nuova task è: ${this.tasks}`)
         }
     }
 });
